@@ -1,1 +1,308 @@
-<h1>Testpagina Ome Koos</h1>
+
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ome Koos Roadservice – Demo</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #141414;
+      color: #fff;
+      margin: 0;
+    }
+    header, section {
+      padding: 2rem;
+    }
+    nav {
+      background: #1f1f1f;
+      padding: 1rem;
+      position: sticky;
+      top: 0;
+      display: flex;
+      justify-content: space-around;
+      z-index: 10;
+    }
+    nav a {
+      color: #00CCFF;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    h2 {
+      color: #FFD700;
+      text-align: center;
+    }
+    .form-section {
+      max-width: 700px;
+      margin: 0 auto;
+      background: #333;
+      padding: 1rem;
+      border-radius: 8px;
+    }
+    label {
+      display: block;
+      margin-top: 1rem;
+      color: #FFD700;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 0.5rem;
+      margin-top: 0.3rem;
+      border: none;
+      border-radius: 4px;
+      font-size: 1rem;
+    }
+    .btn {
+      margin-top: 1.5rem;
+      background: #00CCFF;
+      color: #141414;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .equipment-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #222;
+      padding: 0.5rem;
+      margin-top: 0.5rem;
+      border-radius: 4px;
+    }
+    footer {
+      text-align: center;
+      background: #1f1f1f;
+      padding: 1rem;
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1 style="text-align:center;">Ome Koos Roadservice</h1>
+    <p style="text-align:center;">Alles voor jouw live show: geluid, licht en crew.</p>
+  </header>
+  <nav>
+    <a href="#verhuur">Verhuur</a>
+    <a href="#planning">Planning</a>
+    <a href="#crew">Crewbeheer</a>
+    <a href="#facturatie">Facturatie</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section id="verhuur">
+    <h2>🛠 Apparatuur Verhuur</h2>
+    <div class="form-section">
+      <label for="rentalDate">Datum:</label>
+      <input type="text" id="rentalDate" placeholder="Kies datum">
+
+      <label for="location">Locatie:</label>
+      <input type="text" id="location" placeholder="Adres locatie">
+
+      
+
+<!-- Trigger knop -->
+<button class="btn" onclick="document.getElementById('productModal').style.display='flex'">Kies apparatuur</button>
+
+<!-- Popup modal -->
+<div id="productModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background-color:rgba(0,0,0,0.95); overflow:auto; z-index:9999; justify-content: center; align-items: center;">
+  <div style="background:#1f1f1f; padding:2rem; width:90%; max-width:900px; border-radius:8px; color:white; position:relative;">
+    <h3 style="color:#FFD700; text-align:center;">📋 Beschikbare apparatuur</h3>
+    <p style="text-align:center;">Selecteer de gewenste items en aantallen:</p>
+    <div id="productList" style="display:grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap:1rem; margin-top:1rem;">
+      <div class='equipment-item' style='background:#2a2a2a; padding:1rem; border-radius:6px;'><label>Yamaha DXR12 – €50</label><input type='number' min='0' value='0' data-price='50'></div>
+      <div class='equipment-item' style='background:#2a2a2a; padding:1rem; border-radius:6px;'><label>d&b audiotechnik Q7 – €120</label><input type='number' min='0' value='0' data-price='120'></div>
+      <div class='equipment-item' style='background:#2a2a2a; padding:1rem; border-radius:6px;'><label>Shure PSM300 – €75</label><input type='number' min='0' value='0' data-price='75'></div>
+      <div class='equipment-item' style='background:#2a2a2a; padding:1rem; border-radius:6px;'><label>Allen & Heath SQ-5 – €150</label><input type='number' min='0' value='0' data-price='150'></div>
+      <div class='equipment-item' style='background:#2a2a2a; padding:1rem; border-radius:6px;'><label>DiGiCo SD12 – €400</label><input type='number' min='0' value='0' data-price='400'></div>
+      <div class='equipment-item' style='background:#2a2a2a; padding:1rem; border-radius:6px;'><label>Shure SM58 – €15</label><input type='number' min='0' value='0' data-price='15'></div>
+      <div class='equipment-item' style='background:#2a2a2a; padding:1rem; border-radius:6px;'><label>Sennheiser MD 421 – €25</label><input type='number' min='0' value='0' data-price='25'></div>
+      <div class='equipment-item' style='background:#2a2a2a; padding:1rem; border-radius:6px;'><label>Shure ULX-D – €75</label><input type='number' min='0' value='0' data-price='75'></div>
+      <div class='equipment-item' style='background:#2a2a2a; padding:1rem; border-radius:6px;'><label>ADJ Vizi Beam RXONE – €60</label><input type='number' min='0' value='0' data-price='60'></div>
+      <div class='equipment-item' style='background:#2a2a2a; padding:1rem; border-radius:6px;'><label>Chauvet Rogue R2 Wash – €90</label><input type='number' min='0' value='0' data-price='90'></div>
+      <div class='equipment-item' style='background:#2a2a2a; padding:1rem; border-radius:6px;'><label>ETC S4 750w – €45</label><input type='number' min='0' value='0' data-price='45'></div>
+      <div class='equipment-item' style='background:#2a2a2a; padding:1rem; border-radius:6px;'><label>GrandMA2 onPC – €125</label><input type='number' min='0' value='0' data-price='125'></div>
+      <div class='equipment-item' style='background:#2a2a2a; padding:1rem; border-radius:6px;'><label>Rookmachine met Hazer – €40</label><input type='number' min='0' value='0' data-price='40'></div>
+    </div>
+    <div style="margin-top:1.5rem; text-align:center; font-size:1.2rem;">
+      💰 Totaalprijs: <span id="totalPrice" style="color:#00CCFF;">€0</span>
+    </div>
+    <div style="margin-top:2rem; text-align:center;">
+      <button class='btn' onclick="document.getElementById('productModal').style.display='none'">Klaar</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  const productInputs = document.querySelectorAll('#productModal input[type=number]');
+  productInputs.forEach(input => {
+    input.addEventListener('input', () => {
+      let total = 0;
+      productInputs.forEach(i => {
+        total += parseInt(i.value || 0) * parseFloat(i.dataset.price);
+      });
+      document.getElementById('totalPrice').innerText = '€' + total.toFixed(2);
+    });
+  });
+</script>
+
+<button class="btn" onclick="document.getElementById('productModal').style.display='block'">Kies apparatuur</button>
+
+<!-- Popup modal -->
+<div id="productModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background-color:rgba(0,0,0,0.8); overflow:auto; z-index:9999;">
+  <div style="background:#222; margin:5% auto; padding:2rem; width:90%; max-width:800px; border-radius:8px; color:white;">
+    <h3 style="color:#FFD700;">📋 Beschikbare apparatuur</h3>
+    <p>Selecteer de gewenste items en aantallen:</p>
+    <div id="productList">
+      <div class='equipment-item'><label>Yamaha DXR12 – €50</label><input type='number' min='0' value='0'></div>
+      <div class='equipment-item'><label>d&b audiotechnik Q7 – €120</label><input type='number' min='0' value='0'></div>
+      <div class='equipment-item'><label>Shure PSM300 – €75</label><input type='number' min='0' value='0'></div>
+      <div class='equipment-item'><label>Allen & Heath SQ-5 – €150</label><input type='number' min='0' value='0'></div>
+      <div class='equipment-item'><label>DiGiCo SD12 – €400</label><input type='number' min='0' value='0'></div>
+      <div class='equipment-item'><label>Shure SM58 – €15</label><input type='number' min='0' value='0'></div>
+      <div class='equipment-item'><label>Sennheiser MD 421 – €25</label><input type='number' min='0' value='0'></div>
+      <div class='equipment-item'><label>Shure ULX-D – €75</label><input type='number' min='0' value='0'></div>
+      <div class='equipment-item'><label>ADJ Vizi Beam RXONE – €60</label><input type='number' min='0' value='0'></div>
+      <div class='equipment-item'><label>Chauvet Rogue R2 Wash – €90</label><input type='number' min='0' value='0'></div>
+      <div class='equipment-item'><label>ETC S4 750w – €45</label><input type='number' min='0' value='0'></div>
+      <div class='equipment-item'><label>GrandMA2 onPC – €125</label><input type='number' min='0' value='0'></div>
+      <div class='equipment-item'><label>Rookmachine met Hazer – €40</label><input type='number' min='0' value='0'></div>
+    </div>
+    <br>
+    <button class='btn' onclick="document.getElementById('productModal').style.display='none'">Klaar</button>
+  </div>
+</div>
+
+      <div class="equipment-item"><span>Yamaha DXR12 – €50</span><input type="number" min="0" value="0"/></div>
+      <div class="equipment-item"><span>d&b Q7 – €120</span><input type="number" min="0" value="0"/></div>
+      <div class="equipment-item"><span>Shure SM58 – €15</span><input type="number" min="0" value="0"/></div>
+
+      <label for="delivery">Levering:</label>
+      <select id="delivery">
+        <option>Ophalen</option>
+        <option>Bezorgen en opbouwen</option>
+      </select>
+
+      <label for="email">E-mailadres:</label>
+      <input type="email" id="email" placeholder="jouw@email.com">
+
+      <label for="payment">Betaalwijze:</label>
+      <select id="payment">
+        <option>Online betalen</option>
+        <option>Offerte aanvragen</option>
+      </select>
+
+      <button class="btn">Verstuur aanvraag</button>
+    </div>
+  </section>
+
+  <section id="planning">
+    <h2>📆 Planning</h2>
+    <div class="form-section">
+      <label for="attendees">Aantal bezoekers:</label>
+      <input type="number" id="attendees" placeholder="Bijv. 300">
+
+      <label>Locatie type:</label>
+      <select>
+        <option>Binnen</option>
+        <option>Buiten</option>
+      </select>
+
+      <label>Voorkeursdata:</label>
+      <input type="text" id="preferredDates" placeholder="Selecteer data">
+    </div>
+  </section>
+
+  <section id="crew">
+    <h2>👷 Crewbeheer</h2>
+    <div class="form-section">
+      <label for="crewName">Naam:</label>
+      <input type="text" id="crewName" placeholder="Naam crewmember">
+
+      <label for="crewAvailability">Beschikbare data:</label>
+      <input type="text" id="crewAvailability" placeholder="Selecteer data">
+    </div>
+  </section>
+
+  <section id="facturatie">
+    <h2>📄 Facturatie</h2>
+    <div class="form-section">
+      <label for="uploadInvoice">Factuur uploaden (voor crew):</label>
+      <input type="file" id="uploadInvoice">
+
+      <label for="loginCustomer">Inloggen (voor klanten):</label>
+      <input type="text" placeholder="Klantnummer of offerte-ID">
+      <button class="btn">Bekijk facturen</button>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>📬 Contact & Feedback</h2>
+    <div class="form-section">
+      <label>Naam:</label>
+      <input type="text" placeholder="Jouw naam">
+      <label>E-mail:</label>
+      <input type="email" placeholder="mail@example.com">
+      <label>Bericht:</label>
+      <textarea rows="4" placeholder="Je vraag of feedback..."></textarea>
+      <button class="btn">Verstuur bericht</button>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 Ome Koos Roadservice
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  <script>
+    flatpickr("#rentalDate", { minDate: "today" });
+    flatpickr("#preferredDates", { mode: "multiple", minDate: "today" });
+    flatpickr("#crewAvailability", { mode: "multiple", minDate: "today" });
+  </script>
+
+<script>
+// Verzenden van verhuurformulier
+function submitRental(data) {
+  fetch("https://ome-koos-roadservice.onrender.com/api/rentals", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(data)
+  }).then(res => res.json()).then(res => {
+    alert(res.message || "Verzonden!");
+  });
+}
+
+// Verzenden van crew beschikbaarheid
+function submitCrew(data) {
+  fetch("https://ome-koos-roadservice.onrender.com/api/crew", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(data)
+  }).then(res => res.json()).then(res => {
+    alert(res.message || "Crew beschikbaarheid verzonden!");
+  });
+}
+
+// Upload van factuur
+function uploadInvoice(file) {
+  const formData = new FormData();
+  formData.append("file", file);
+  fetch("https://ome-koos-roadservice.onrender.com/api/upload", {
+    method: "POST",
+    body: formData
+  }).then(res => res.json()).then(res => {
+    alert(res.message || "Upload voltooid!");
+  });
+}
+</script>
+
+</body>
+</html>
